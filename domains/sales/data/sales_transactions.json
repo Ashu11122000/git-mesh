@@ -1,0 +1,106 @@
+{
+  "domain": "sales",
+  "dataset_name": "sales_transactions",
+  "records": [
+    {
+      "transaction_id": "TXN1001",
+      "order_id": "ORD5001",
+      "product_id": "PROD101",
+      "customer_id": "CUST201",
+      "quantity": 2,
+      "unit_price": 1200.0,
+      "total_amount": 2400.0,
+      "transaction_timestamp": "2026-11-20T09:15:30Z"
+    },
+    {
+      "transaction_id": "TXN1002",
+      "order_id": "ORD5002",
+      "product_id": "PROD102",
+      "customer_id": "CUST202",
+      "quantity": 1,
+      "unit_price": 2500.0,
+      "total_amount": 2500.0,
+      "transaction_timestamp": "2026-11-20T10:30:45Z"
+    },
+    {
+      "transaction_id": "TXN1003",
+      "order_id": "ORD5003",
+      "product_id": "PROD103",
+      "customer_id": "CUST203",
+      "quantity": 3,
+      "unit_price": 800.0,
+      "total_amount": 2400.0,
+      "transaction_timestamp": "2026-11-20T11:45:00Z"
+    },
+    {
+      "transaction_id": "TXN1004",
+      "order_id": "ORD5004",
+      "product_id": "PROD104",
+      "customer_id": "CUST204",
+      "quantity": 2,
+      "unit_price": 1500.0,
+      "total_amount": 3000.0,
+      "transaction_timestamp": "2026-11-21T08:20:15Z"
+    },
+    {
+      "transaction_id": "TXN1005",
+      "order_id": "ORD5005",
+      "product_id": "PROD105",
+      "customer_id": "CUST205",
+      "quantity": 4,
+      "unit_price": 500.0,
+      "total_amount": 2000.0,
+      "transaction_timestamp": "2026-11-21T12:10:30Z"
+    },
+    {
+      "transaction_id": "TXN1006",
+      "order_id": "ORD5006",
+      "product_id": "PROD106",
+      "customer_id": "CUST206",
+      "quantity": 1,
+      "unit_price": 4500.0,
+      "total_amount": 4500.0,
+      "transaction_timestamp": "2026-11-21T14:25:40Z"
+    },
+    {
+      "transaction_id": "TXN1007",
+      "order_id": "ORD5007",
+      "product_id": "PROD107",
+      "customer_id": "CUST207",
+      "quantity": 5,
+      "unit_price": 300.0,
+      "total_amount": 1500.0,
+      "transaction_timestamp": "2026-11-22T09:05:20Z"
+    },
+    {
+      "transaction_id": "TXN1008",
+      "order_id": "ORD5008",
+      "product_id": "PROD108",
+      "customer_id": "CUST208",
+      "quantity": 2,
+      "unit_price": 1800.0,
+      "total_amount": 3600.0,
+      "transaction_timestamp": "2026-11-22T13:40:10Z"
+    },
+    {
+      "transaction_id": "TXN1009",
+      "order_id": "ORD5009",
+      "product_id": "PROD109",
+      "customer_id": "CUST209",
+      "quantity": 3,
+      "unit_price": 950.0,
+      "total_amount": 2850.0,
+      "transaction_timestamp": "2026-11-22T15:15:55Z"
+    },
+    {
+      "transaction_id": "TXN1010",
+      "order_id": "ORD5010",
+      "product_id": "PROD110",
+      "customer_id": "CUST210",
+      "quantity": 1,
+      "unit_price": 6000.0,
+      "total_amount": 6000.0,
+      "transaction_timestamp": "2026-11-23T08:50:00Z"
+    }
+  ]
+}

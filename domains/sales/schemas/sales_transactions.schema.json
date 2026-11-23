@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://data-mesh.local/domains/sales/schemas/sales_transactions.schema.json",
+  "title": "Sales Transactions Data Product Schema",
+  "description": "Schema contract owned and maintained by the Sales domain for its sales transaction data product.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["domain", "dataset_name", "records"],
+  "properties": {
+    "domain": {
+      "type": "string",
+      "const": "sales",
+      "description": "Business domain owning this dataset."
+    },
+    "dataset_name": {
+      "type": "string",
+      "const": "sales_transactions",
+      "description": "Name of the Sales domain dataset."
+    },
+    "records": {
+      "type": "array",
+      "description": "Collection of Sales transaction records.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "transaction_id",
+          "order_id",
+          "product_id",
+          "customer_id",
+          "quantity",
+          "unit_price",
+          "total_amount",
+          "transaction_timestamp"
+        ],
+        "properties": {
+          "transaction_id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Unique transaction identifier."
+          },
+          "order_id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Identifier of the associated order."
+          },
+          "product_id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Identifier of the product sold."
+          },
+          "customer_id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Identifier of the customer."
+          },
+          "quantity": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Number of units sold."
+          },
+          "unit_price": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Price of one unit."
+          },
+          "total_amount": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Total transaction value."
+          },
+          "transaction_timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
+            "description": "Transaction timestamp in standardized UTC ISO 8601 format."
+          }
+        }
+      }
+    }
+  }
+}

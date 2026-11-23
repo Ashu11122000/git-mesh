@@ -1,0 +1,73 @@
+{
+  "contract_version": "1.0",
+  "data_product_id": "sales.transactions.v1",
+  "data_product_name": "Sales Transactions Data Product",
+  "product_version": "1.0.0",
+  "domain": "sales",
+  "status": "published",
+  "description": "A domain-owned data product that publishes sales transaction records for authorized analytical and business consumers.",
+  "owner": {
+    "domain": "Sales",
+    "team": "Sales Data Team",
+    "contact_role": "Sales Data Steward"
+  },
+  "interface": {
+    "type": "file-based",
+    "format": "json",
+    "location": "domains/sales/data/sales_transactions.json",
+    "schema_location": "domains/sales/schemas/sales_transactions.schema.json",
+    "metadata_location": "domains/sales/metadata/sales_transactions_metadata.json"
+  },
+  "data_characteristics": {
+    "dataset_name": "sales_transactions",
+    "grain": "One record per sales transaction",
+    "primary_key": "transaction_id",
+    "record_count": 10,
+    "contains_customer_identifier": true,
+    "classification": "internal"
+  },
+  "quality_contract": {
+    "schema_validation": "Required",
+    "required_fields": "All declared fields must be present",
+    "transaction_id_uniqueness": "transaction_id must be unique",
+    "quantity_rule": "quantity must be a positive integer",
+    "price_rule": "unit_price must be greater than or equal to zero",
+    "total_amount_rule": "total_amount must be greater than or equal to zero",
+    "timestamp_rule": "transaction_timestamp must follow ISO 8601 UTC format YYYY-MM-DDTHH:mm:ssZ"
+  },
+  "metadata_contract": {
+    "required_tags": [
+      "domain:sales",
+      "data_product:sales_transactions",
+      "classification:internal",
+      "format:json",
+      "lifecycle:active",
+      "business_area:revenue",
+      "data_type:transactional"
+    ]
+  },
+  "service_expectations": {
+    "refresh_frequency": "daily",
+    "freshness_sla": "24 hours"
+  },
+  "consumer_expectations": {
+    "intended_use": [
+      "Sales performance analysis",
+      "Revenue reporting",
+      "Product sales analysis",
+      "Transaction trend analysis"
+    ],
+    "limitations": [
+      "Educational sample dataset",
+      "Simulated transaction data",
+      "Not for production financial reporting"
+    ]
+  },
+  "publishing_principles": {
+    "domain_owned": true,
+    "raw_data_centralized": false,
+    "schema_owned_by_domain": true,
+    "metadata_owned_by_domain": true,
+    "governance_compliance_required": true
+  }
+}

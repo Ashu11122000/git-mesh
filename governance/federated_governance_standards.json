@@ -1,0 +1,55 @@
+{
+  "governance_version": "1.0",
+  "governance_model": "federated",
+  "description": "Shared governance standards for independently owned data products across domains.",
+  "timestamp_standard": {
+    "standard": "ISO 8601",
+    "format": "YYYY-MM-DDTHH:mm:ssZ",
+    "timezone": "UTC",
+    "regex": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+  },
+  "required_metadata_tags": [
+    "domain",
+    "data_product",
+    "classification",
+    "format",
+    "lifecycle",
+    "business_area"
+  ],
+  "allowed_classifications": [
+    "public",
+    "internal",
+    "confidential",
+    "restricted"
+  ],
+  "allowed_formats": ["json", "csv", "parquet", "avro"],
+  "required_metadata_fields": [
+    "metadata_version",
+    "domain",
+    "product",
+    "dataset",
+    "metadata_tags",
+    "standardization"
+  ],
+  "required_data_product_contract_fields": [
+    "contract_version",
+    "data_product",
+    "ownership",
+    "interface",
+    "dataset_characteristics",
+    "quality_contract",
+    "metadata_contract",
+    "service_expectations",
+    "publishing_principles"
+  ],
+  "governance_principles": {
+    "domain_ownership_required": true,
+    "data_product_required": true,
+    "metadata_required": true,
+    "schema_required": true,
+    "quality_validation_required": true,
+    "raw_data_centralization_prohibited": true,
+    "domain_schema_ownership_required": true,
+    "domain_metadata_ownership_required": true
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "contract_version": "1.0",
+  "data_product": {
+    "id": "customer_support.tickets.v1",
+    "name": "Customer Support Tickets Data Product",
+    "version": "1.0.0",
+    "domain": "customer_support",
+    "status": "published",
+    "description": "A domain-owned data product containing support tickets, issue categories, priorities, ticket statuses, and resolution information."
+  },
+  "ownership": {
+    "domain_owner": "Customer Support",
+    "team": "Customer Support Data Team",
+    "data_steward": "Customer Support Data Steward",
+    "domain_owned": true
+  },
+  "interface": {
+    "type": "file-based",
+    "format": "json",
+    "data_path": "domains/customer_support/data/support_tickets.json",
+    "schema_path": "domains/customer_support/schemas/support_tickets.schema.json",
+    "metadata_path": "domains/customer_support/metadata/support_tickets_metadata.json"
+  },
+  "dataset_characteristics": {
+    "dataset_name": "support_tickets",
+    "grain": "One record per support ticket",
+    "primary_key": "ticket_id",
+    "record_count": 10,
+    "classification": "internal",
+    "contains_customer_identifier": true,
+    "contains_direct_pii": false
+  },
+  "quality_contract": {
+    "schema_validation_required": true,
+    "quality_validation_required": true,
+    "required_fields": [
+      "ticket_id",
+      "customer_id",
+      "issue_category",
+      "priority",
+      "status",
+      "created_timestamp",
+      "resolved_timestamp",
+      "resolution_hours"
+    ],
+    "quality_rules": [
+      "ticket_id must be unique",
+      "Required fields must be present",
+      "Priority must be Low, Medium, or High",
+      "Status must be Open, In Progress, or Resolved",
+      "Resolution hours must not be negative",
+      "Resolved tickets must contain resolution information",
+      "Open and In Progress tickets must not contain resolution information",
+      "Resolution timestamp must not precede ticket creation",
+      "Resolution hours must match the timestamp difference"
+    ],
+    "timestamp_standard": "ISO 8601 UTC",
+    "timestamp_format": "YYYY-MM-DDTHH:mm:ssZ",
+    "timezone": "UTC"
+  },
+  "metadata_contract": {
+    "required_tags": [
+      "domain:customer_support",
+      "data_product:support_tickets",
+      "classification:internal",
+      "format:json",
+      "lifecycle:active",
+      "business_area:customer_support",
+      "data_type:operational",
+      "data_type:support_ticket"
+    ],
+    "metadata_required": true
+  },
+  "service_expectations": {
+    "refresh_frequency": "Daily",
+    "freshness_expectation": "24 hours",
+    "availability_expectation": "Available to authorized data product consumers"
+  },
+  "consumer_information": {
+    "intended_uses": [
+      "Support ticket monitoring",
+      "Resolution performance analysis",
+      "Issue category analysis",
+      "Priority analysis",
+      "Customer support operational reporting",
+      "Service performance monitoring"
+    ],
+    "limitations": [
+      "The dataset is simulated",
+      "The dataset contains only 10 tickets",
+      "The dataset is not representative of actual support operations"
+    ]
+  },
+  "publishing_principles": {
+    "domain_owned": true,
+    "raw_data_centralized": false,
+    "schema_owned_by_domain": true,
+    "metadata_owned_by_domain": true,
+    "governance_compliance_required": true
+  }
+}

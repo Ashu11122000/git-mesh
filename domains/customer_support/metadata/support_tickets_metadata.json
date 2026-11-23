@@ -1,0 +1,92 @@
+{
+  "metadata_version": "1.0",
+  "domain": "customer_support",
+  "product": {
+    "name": "support_tickets",
+    "display_name": "Customer Support Tickets",
+    "description": "A domain-owned data product containing customer support ticket information, issue categories, priorities, ticket statuses, and resolution details.",
+    "version": "1.0.0",
+    "status": "active",
+    "owner": {
+      "domain": "Customer Support",
+      "team": "Customer Support Data Team",
+      "data_steward": "Customer Support Data Steward"
+    }
+  },
+  "dataset": {
+    "name": "support_tickets",
+    "format": "json",
+    "data_path": "domains/customer_support/data/support_tickets.json",
+    "schema_path": "domains/customer_support/schemas/support_tickets.schema.json",
+    "grain": "One record per support ticket",
+    "primary_key": "ticket_id",
+    "classification": "internal",
+    "contains_customer_identifier": true,
+    "contains_direct_pii": false
+  },
+  "business_context": {
+    "business_area": "customer_support",
+    "business_purpose": "Monitor customer issues, ticket resolution performance, workload, priorities, and customer support operations.",
+    "intended_consumers": [
+      "Customer Support Managers",
+      "Support Operations Analysts",
+      "Business Analysts",
+      "Data Analysts"
+    ],
+    "intended_uses": [
+      "Support ticket monitoring",
+      "Resolution performance analysis",
+      "Issue category analysis",
+      "Priority analysis",
+      "Customer support operational reporting",
+      "Service performance monitoring"
+    ]
+  },
+  "standardization": {
+    "timestamp_standard": "ISO 8601",
+    "timestamp_format": "YYYY-MM-DDTHH:mm:ssZ",
+    "timezone": "UTC",
+    "required_timestamp_fields": [
+      "created_timestamp"
+    ],
+    "nullable_timestamp_fields": [
+      "resolved_timestamp"
+    ]
+  },
+  "metadata_tags": [
+    "domain:customer_support",
+    "data_product:support_tickets",
+    "classification:internal",
+    "format:json",
+    "lifecycle:active",
+    "business_area:customer_support",
+    "data_type:operational",
+    "data_type:support_ticket"
+  ],
+  "data_quality": {
+    "quality_checks": [
+      "ticket_id must be unique",
+      "Required fields must be populated",
+      "Priority must be Low, Medium, or High",
+      "Status must be Open, In Progress, or Resolved",
+      "Resolution hours must not be negative",
+      "Resolved tickets must have resolution information",
+      "Open and In Progress tickets must not have resolution information",
+      "Resolution timestamp must not precede ticket creation timestamp",
+      "Resolution hours must match the timestamp difference"
+    ],
+    "quality_validation_script": "src/domains/customer_support/validate_support_quality.py",
+    "schema_validation_script": "src/domains/customer_support/validate_support.py"
+  },
+  "service_expectations": {
+    "refresh_frequency": "Daily",
+    "freshness_expectation": "24 hours",
+    "availability_expectation": "Available to authorized data product consumers"
+  },
+  "limitations": [
+    "The dataset is a simulated sample dataset",
+    "The dataset contains only 10 support tickets",
+    "Customer identifiers are included but direct personal information is not included",
+    "The dataset is not representative of actual support operations"
+  ]
+}

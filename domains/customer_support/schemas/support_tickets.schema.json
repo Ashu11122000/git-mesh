@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "customer_support.support_tickets.schema.json",
+  "title": "Customer Support Tickets Schema",
+  "description": "Schema for the Customer Support domain support ticket data product",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["domain", "dataset_name", "records"],
+  "properties": {
+    "domain": {
+      "type": "string",
+      "const": "customer_support"
+    },
+    "dataset_name": {
+      "type": "string",
+      "const": "support_tickets"
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ticket_id",
+          "customer_id",
+          "issue_category",
+          "priority",
+          "status",
+          "created_timestamp",
+          "resolved_timestamp",
+          "resolution_hours"
+        ],
+        "properties": {
+          "ticket_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "customer_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "issue_category": {
+            "type": "string",
+            "enum": ["Payment", "Delivery", "Product", "Refund", "Account"]
+          },
+          "priority": {
+            "type": "string",
+            "enum": ["Low", "Medium", "High"]
+          },
+          "status": {
+            "type": "string",
+            "enum": ["Open", "In Progress", "Resolved"]
+          },
+          "created_timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+          },
+          "resolved_timestamp": {
+            "type": ["string", "null"],
+            "format": "date-time",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+          },
+          "resolution_hours": {
+            "type": ["number", "null"],
+            "minimum": 0
+          }
+        }
+      }
+    }
+  }
+}
