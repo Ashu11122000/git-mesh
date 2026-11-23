@@ -1,0 +1,222 @@
+# ------------------------------------------------------------
+# Python
+# ------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python compiled files
+*.pyo
+*.pyd
+*.so
+
+# ------------------------------------------------------------
+# Virtual Environments
+# ------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+virtualenv/
+.python-version
+
+# ------------------------------------------------------------
+# Python Packaging
+# ------------------------------------------------------------
+build/
+dist/
+*.egg
+*.egg-info/
+.eggs/
+wheels/
+pip-wheel-metadata/
+
+# ------------------------------------------------------------
+# Python Testing
+# ------------------------------------------------------------
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+test-results/
+junit.xml
+
+# ------------------------------------------------------------
+# Type Checking and Linting
+# ------------------------------------------------------------
+.mypy_cache/
+.pyright/
+.ruff_cache/
+.dmypy.json
+.pyre/
+
+# ------------------------------------------------------------
+# Jupyter Notebooks
+# ------------------------------------------------------------
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ------------------------------------------------------------
+# IDEs and Editors
+# ------------------------------------------------------------
+
+# Visual Studio Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# ------------------------------------------------------------
+# Operating System Files
+# ------------------------------------------------------------
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble/
+.LSOverride
+._*
+
+# Linux
+*~
+.nfs*
+
+# ------------------------------------------------------------
+# Environment Variables and Secrets
+# ------------------------------------------------------------
+.env
+.env.*
+!.env.example
+!.env.template
+
+# Secret files
+secrets/
+secret/
+credentials/
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+
+# ------------------------------------------------------------
+# Logs
+# ------------------------------------------------------------
+logs/
+*.log
+log/
+
+# ------------------------------------------------------------
+# Temporary Files
+# ------------------------------------------------------------
+tmp/
+temp/
+.tmp/
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.backup
+*.old
+
+# ------------------------------------------------------------
+# Docker and Container Runtime Files
+# ------------------------------------------------------------
+
+# Docker overrides containing local configuration
+docker-compose.override.yml
+docker-compose.override.yaml
+
+# Container-generated files
+docker-data/
+docker-volumes/
+container-data/
+
+# ------------------------------------------------------------
+# Local Data Files
+# ------------------------------------------------------------
+
+# Large generated datasets
+data/generated/
+data/output/
+data/processed/
+data/tmp/
+
+# Local database files
+*.db
+*.sqlite
+*.sqlite3
+
+# ------------------------------------------------------------
+# Data Product Runtime Outputs
+# ------------------------------------------------------------
+
+# Generated output
+output/
+outputs/
+artifacts/
+runtime/
+execution-results/
+
+# Temporary validation reports
+validation-reports/
+validation-results/
+
+# ------------------------------------------------------------
+# DataHub Local Runtime
+# ------------------------------------------------------------
+
+# DataHub local deployment data
+datahub-data/
+datahub-logs/
+
+# Local DataHub configuration
+datahub.local.yml
+datahub.local.yaml
+
+# ------------------------------------------------------------
+# Metadata / Configuration Protection
+# ------------------------------------------------------------
+
+# Local-only metadata files
+metadata.local.json
+metadata.local.yaml
+metadata.local.yml
+
+# Local configuration overrides
+config.local.json
+config.local.yaml
+config.local.yml
+
+# ------------------------------------------------------------
+# Generated Schema / Documentation
+# ------------------------------------------------------------
+
+# Generated files only (keep manually maintained schemas)
+generated-schemas/
+generated-docs/
+
+# ------------------------------------------------------------
+# Dependency Management
+# ------------------------------------------------------------
+
+# Do NOT ignore requirements.txt, pyproject.toml, or lock files.
+# These should normally be committed for reproducibility.
+
+# ------------------------------------------------------------
+# Git
+# ------------------------------------------------------------
+*.orig
