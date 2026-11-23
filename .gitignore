@@ -132,9 +132,6 @@ temp/
 *.backup
 *.old
 
-# ------------------------------------------------------------
-# Docker and Container Runtime Files
-# ------------------------------------------------------------
 
 # Docker overrides containing local configuration
 docker-compose.override.yml
@@ -145,9 +142,6 @@ docker-data/
 docker-volumes/
 container-data/
 
-# ------------------------------------------------------------
-# Local Data Files
-# ------------------------------------------------------------
 
 # Large generated datasets
 data/generated/
@@ -160,9 +154,6 @@ data/tmp/
 *.sqlite
 *.sqlite3
 
-# ------------------------------------------------------------
-# Data Product Runtime Outputs
-# ------------------------------------------------------------
 
 # Generated output
 output/
